@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://static.opentok.com/v2/js/opentok.js"></script>
+  </head>
+  <body>
+    <h2>Welcome to test application.</h2>
+            <!-- OpenTok.js library -->
+
+<script>
+  window.onload = function(){ 
+    
+
+  var apiKey = '45828062';
+  var sessionId = '1_MX40NTgyODA2Mn5-MTU2NjU1ODc1NTY0OH5sUFN2SCtabE1Lc0krUkRrWk9NamViNTN-UH4';
+  var token = 'T1==cGFydG5lcl9pZD00NTgyODA2MiZzaWc9MTE3Y2JlYmI4ZWIxY2ExN2ZhZjI3NTZjN2NmZjMxZmE0MjAxNTQxYzpzZXNzaW9uX2lkPTFfTVg0ME5UZ3lPREEyTW41LU1UVTJOalUxT0RjMU5UWTBPSDVzVUZOMlNDdGFiRTFMYzBrclVrUnJXazlOYW1WaU5UTi1VSDQmY3JlYXRlX3RpbWU9MTU2NjU1ODc4MyZub25jZT0wLjk4MTI4ODY5Mzg4ODg5Mzgmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTU2NjY0NTE4Mw==';
+  var session = OT.initSession(apiKey, sessionId);
+
+  // create publisher
+  var publisher = OT.initPublisher();
+  session.connect(token, function(err) {
+    // publish publisher
+    
+  });
+  session.publish(publisher);
+  session.on('streamCreated', function(event) {
+    session.subscribe(event.stream);
+  });
+};
+        
+        </script>
+  </body>
+</html>
